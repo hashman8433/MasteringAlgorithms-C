@@ -40,6 +40,7 @@ int issort(void *data, int size, int esize,int (*compare)(const void *key1,const
 		}
 		memcpy( &a[i * esize], key, esize);
 	}
+	return 1;
 
 }
 
@@ -104,16 +105,17 @@ static int partition(void *data, int esize, int i, int k, int (*compare)
 int qksort(void *data, int size, int esize, int i, int k, int (*compare)(const void *key1, const void *key2))
 {
 
-	int j;
+	int j = 0;
 	
 	if((k = partition(data, esize, i, k, compare)) < 0) return -1;
-	/*
+	
 	if(qksort(data,size, sizeof(int), i, j, compare_int) < 0)
 		return -1;
 	
 	if(qksort(data,size, sizeof(int), j+1, k, compare_int) < 0)
 		return -1;
-	*/					
+
+	return 	0;
 }
 
 
@@ -126,5 +128,5 @@ int main()
 
 	//issort(qarray, 5, sizeof(int),compare_int);
 	printf("%d %d %d %d %d",qarray[0], qarray[1], qarray[2], qarray[3], qarray[4]);
-	
+	return 1;
 }
