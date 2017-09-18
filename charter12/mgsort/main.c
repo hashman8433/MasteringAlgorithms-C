@@ -95,14 +95,14 @@ int mgsort(void *data, int esize, int i, int k,int (*compare)(const void *key1, 
 }
 int main(int argc, char *argv[])
 {
-	int iarray[10] = {6,7,5,3,7};
+	int iarray[10] = {6,9,5,3,7};
 	
 	printf("%d %d %d %d %d\n", iarray[0], iarray[1], iarray[2], iarray[3], iarray[4]);
 	
-	/*if(mgsort(iarray, sizeof(int), 0, 4, compare_int) < 0)
-		printf("sort errot \n");*/
+	if(mgsort(iarray, sizeof(int), 0, 4, compare_int) < 0)
+		printf("sort errot \n");
 		
-	merge(iarray, sizeof(int),0 ,0, 1, compare_int);
+	//merge(iarray, sizeof(int),0 ,0, 1, compare_int);
 	
 	printf("after sort %d %d %d %d %d\n", iarray[0], iarray[1], iarray[2], iarray[3], iarray[4]);
 	
