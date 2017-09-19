@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
-
+#include <stdio.h>
 static int ctsort(int *data, int size, int k)
 {
 	int *counts, *temp;
